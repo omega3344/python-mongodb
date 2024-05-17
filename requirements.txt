@@ -1,0 +1,5 @@
+pandas
+tabulate
+pywin32
+python-dotenv
+pymongo
