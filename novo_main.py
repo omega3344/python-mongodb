@@ -12,8 +12,54 @@ from DatabaseManager import DatabaseManager
 database = DatabaseManager()
 
 
-  
 
+#centrar janela
+
+def centrar (jan, jan_l, jan_a):
+
+    ecra_l = jan.winfo_screenwidth()
+    ecra_a = jan.winfo_screenheight()
+    posx = ecra_l//2 - jan_l//2
+    posy = ecra_a//2 - jan_a//2
+    jan.geometry(f'{jan_l}x{jan_a}+{posx}+{posy}')
+
+
+#criar janela de arranque do jogo
+
+init = Tk()
+in_l = 600
+in_a = 600
+centrar(init, in_l, in_a)
+init['bg']=('Linen')
+init.resizable(0,0)
+init.wm_overrideredirect(True) 
+init.focus_force()
+
+#janela de arranque do jogo
+
+
+
+def choice():
+
+    global choice
+    tema = combo.get()
+    init.destroy()
+
+
+
+
+#criar botões com imagem inicial
+
+b0 = Button(init, text = "Introduzir nova viatura", command=lambda: click_botao(b0, 1), cursor = 'hand2', relief='groove',height= 3, width=25).pack(pady = 10)
+b1 = Button(init, text = "Consultar / Atualizar viatura", command=lambda: click_botao(b1, 2), cursor = 'hand2', relief='groove',height= 3, width=25).pack(pady = 10)
+b2 = Button(init, text = "Remover viatura", command=lambda: click_botao(b2, 3), cursor = 'hand2', relief='groove',height= 3, width=25).pack(pady = 10)
+b3 = Button(init, text = "Listar viaturas", command=lambda: click_botao(b3, 4), cursor = 'hand2', relief='groove',height= 3, width=25).pack(pady = 10)
+b4 = Button(init, text = "Sair", command=lambda: click_botao(b4, 5), cursor = 'hand2', relief='groove',height= 3, width=25).pack(pady = 10)
+
+
+init.mainloop()
+
+'''
 root = Tk()
 root.title("Viaturas Serviço")
 root.geometry("750x350")
@@ -50,7 +96,7 @@ e6 = Entry(root, width=30, borderwidth=5)
 e6.grid(row=6, column=2)
 e7 = Entry(root, width=30, borderwidth=5)
 e7.grid(row=7, column=2)
-
+'''
 
 '''
 def Register():
@@ -137,5 +183,6 @@ button2 = Button(root, text="Delete", width=10, height=2,
                  command=Delete).grid(row=5, column=0)
 button4 = Button(root, text="Show record", width=10, height=2,
                  command=ShowRecord).grid(row=5, column=2)
-'''
+
 root.mainloop()
+'''
