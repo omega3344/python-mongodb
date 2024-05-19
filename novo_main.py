@@ -13,7 +13,7 @@ database = DatabaseManager()
 
 
 
-#centrar janela
+# Center window
 
 def centrar (jan, jan_l, jan_a):
 
@@ -24,7 +24,7 @@ def centrar (jan, jan_l, jan_a):
     jan.geometry(f'{jan_l}x{jan_a}+{posx}+{posy}')
 
 
-#criar janela de arranque do jogo
+# Create window
 
 init = Tk()
 in_l = 600
@@ -34,9 +34,6 @@ init['bg']=('Linen')
 init.resizable(0,0)
 init.wm_overrideredirect(True) 
 init.focus_force()
-
-#janela de arranque do jogo
-
 
 
 def choice():
@@ -48,7 +45,7 @@ def choice():
 
 
 
-#criar botões com imagem inicial
+# criar botões com imagem inicial
 
 b0 = Button(init, text = "Introduzir nova viatura", command=lambda: click_botao(b0, 1), cursor = 'hand2', relief='groove',height= 3, width=25).pack(pady = 10)
 b1 = Button(init, text = "Consultar / Atualizar viatura", command=lambda: click_botao(b1, 2), cursor = 'hand2', relief='groove',height= 3, width=25).pack(pady = 10)
